@@ -1,0 +1,112 @@
+h4 {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+  }
+  
+  label {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+  }
+  
+  .card-form {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    background-color: #f0f0f0;
+    height: 123px;
+    width: 407px;
+    left: 26px;
+    top: 24px;
+    border-radius: 0px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  
+  .input {
+    width: 142px;
+    height: 17px;
+    left: 39px;
+    top: 81px;
+    background: #fefefe;
+    border: 1px solid #d8d8d8;
+    box-sizing: border-box;
+  }
+  
+  .card-button {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  
+    position: absolute;
+    width: 142px;
+    height: 17px;
+    left: 250px;
+    top: 100px;
+  
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #9f0000;
+    color: #e7e7e7;
+    border: 0;
+    padding: 4px;
+  }
+  
+  .card-num {
+    margin-top: 30px;
+    margin-left: 15px;
+    float: left;
+    width: 31px;
+    height: 31px;
+    left: 27px;
+    top: 177px;
+  
+    background: #f0f0f0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  h5 {
+    margin-left: 12px;
+    margin-top: 10px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .x {
+    position: absolute;
+    margin-left: 25px;
+    width: 13px;
+    height: 13px;
+    top: 155px;
+    font-family: "Montserrat";
+    color: #ffffff;
+    background: #9f0000;
+    text-align: center;
+    font-size: 10px;
+  
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  
