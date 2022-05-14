@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap" rel="stylesheet">
+
+    <title>Paracial 2</title>
+</head>
+<body>
+
+    <div class="var-section">
+        <div class="github-icon">
+            <img src="img/github-icon.svg">
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="pokemon-logo">
+            <img src="img/pokemon-logo.svg">
+        </div>
+        <div class="form-pokemon">
+            <h1 class="title">Buscador de Pokemones</h1>
+            <h3 class="tagline">Busca desde pokemones hasta las abilidades de los mismos.</h3>
+            <div class="search">
+                <form id="pokemon-form">
+                    <label class="lbl-buscar">Buscar</label>
+                    <label class="lbl-tipo">Tipo de Busqueda</label>
+                    <input class="inp-buscar" id="poke-inptut">
+                    <select name="cars" id="poke-select">
+                        <option value="pokemon">Por pokemon</option>
+                        <option value="ability">Por habilidad</option>
+                    </select>
+                    <button class="btn-clean">Limpiar</button>
+                    <button class="btn-search" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="reponse-card" id="response-pokemon">
+       
+    </div>
+
+    <script src="modules/utils.js"></script>
+    <script src="modules/index.js"></script>
+
+</body>
+</html>

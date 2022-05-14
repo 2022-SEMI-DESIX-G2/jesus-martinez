@@ -1,0 +1,194 @@
+body{
+    background-color: #031926;
+}
+
+.var-section{
+    position: absolute;
+    width: 100%;
+}
+
+.github-icon{
+    position: relative;
+    margin-left: 95%;
+    margin-top: 10px;
+}
+
+.form-section{
+    position: absolute;
+    width: 100%;
+}
+
+.pokemon-logo{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-pokemon{
+    margin-left: 35%;
+    margin-top: -55px;
+    width: 536px;
+    background-color: #F7F9F7;
+    height: 210px;
+    border-radius: 5px;
+}
+
+.title{
+    position: relative;
+    left:47px;
+    top: 35px;
+
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.tagline{
+    position: relative;
+    left: 47px;
+    top: 25px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+label{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.lbl-buscar{
+    position: relative;
+    top: 25px;
+    margin-left: 47px;
+}
+.lbl-tipo{
+    position: relative;
+    top: 25px;
+    margin-left: 180px;
+}
+
+input{
+    background-color: #E8E8E8;
+    border-radius: 5px;
+    border:0;
+    height: 27px;
+    width: 218px;
+}
+
+.inp-buscar{
+    position: relative;
+    margin-left: 47px;
+    margin-top: 27px;
+}
+
+select{
+    background-color: #E8E8E8;
+    border-radius: 5px;
+    border:0;
+    height: 27px;
+    width: 218px;
+}
+
+button{
+    background-color: #19A5F8;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: 0;
+
+    width: 108px;
+    height: 27px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.btn-clean{
+    position: absolute;
+    top: 280px;
+    left: 675px;
+    display: none;
+}
+
+.btn-search{
+    position: absolute;
+    top: 280px;
+    left: 1010px;
+}
+
+/* Inicio de estilos de respuesta */
+
+.reponse-card{
+    background-color: #F7F9F7;
+    margin-left: 35%;
+    width: 536px;
+    margin-top: 350px;
+    position: absolute;
+    color:#000000;
+    border-radius: 5px;
+}
+
+.poke-title{
+    font-family: 'Montserrat', sans-serif;
+    font-style: Bold;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px; 
+    margin-left: 47px;
+    margin-top: 25px;
+}
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .item{
+    width: 50%;
+  }
+
+  .item h3{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 9px;
+    margin-left: 47px;
+  }
+
+  .item h4{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    margin-left: 47px;
+  }
+
+.item ul{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 9px;
+    margin-left: 30px;
+}
+
+.poke-img{
+    margin-left: 47px;
+    width: 50px;
+}
+
+.eye-img{
+    margin-top: 0px;
+    position: absolute;
+    margin-left: 2px;
+}
