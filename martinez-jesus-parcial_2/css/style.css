@@ -192,3 +192,9 @@ button{
     position: absolute;
     margin-left: 2px;
 }
+
+.baby-img{
+    margin-top: -2px;
+    position: absolute;
+    margin-left: 4px;
+}
