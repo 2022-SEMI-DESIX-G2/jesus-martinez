@@ -27,7 +27,7 @@
             },
             cleanPokemonCars: () => {
                 App.htmmlElements.pokeOutput.innerHTML =""
-
+                App.htmmlElements.pokeClean.style.display = 'none'
             }
         },
         templates: {
