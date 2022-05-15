@@ -40,7 +40,7 @@
                     <div class="item">
                         <h3>Sprites</h3>
                         <img class="poke-img" src="${sprites.front_default}">
-                        <img class="poke-img" src="${sprites.back_default}">
+                        <img class="poke-img-r" src="${sprites.back_default}">
                     </div>
                     <div class="item">
                         <h3>Weight / Height</h3>
@@ -56,9 +56,14 @@
                     </div>
                 </div>`
             },
-            abilityCard: async ({ pokemon }) => {
-                const response = pokemon.map(({ pokemon, is_hidden }) => `<li>${pokemon.name}</li>`) 
-                return `<ul>${response.join("")}</ul>`
+            abilityCard: async ({ pokemon, name }) => {
+                const response = pokemon.map(({ pokemon, is_hidden }) => `<li>${pokemon.name} ${is_hidden? '<img class="eye-img"src="img/eye.svg">':""} </li>`) 
+                return ` <h1 class="poke-title">${name}</h1>
+                <div class="item">
+                    <h3>Who can learn it?</h3>
+                    <ul>${response.join("")}</ul>
+                </div>` 
+                
             }
         }
     }
