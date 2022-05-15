@@ -72,6 +72,9 @@
                     <h3>Who can learn it?</h3>
                     <ul>${response.join("")}</ul>
                 </div>` 
+            },
+            errorCard: () => {
+                return ` <h1 class="poke-title">Error</h1>`
             }
         }
     }
