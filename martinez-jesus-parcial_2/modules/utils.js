@@ -24,7 +24,6 @@
             return rawResponse.json();
         },
         getEvolutionChain: async (pokeSpecieUrl) => {
-
             const responseEvo = await Utils.getPokemonEvolution(pokeSpecieUrl)
             const responsePokeEvo  = await Utils.getPokemonEvolution(responseEvo.evolution_chain.url)
             const evolutionChain = responsePokeEvo.chain

@@ -16,7 +16,6 @@
                 const query = App.htmmlElements.pokeInput.value
                 try{
                     const response = await Utils.getServerSearch({searchType,query})
-                    
                     const renderTemplate = App.templates.render({searchType, response})
                     App.htmmlElements.pokeOutput.innerHTML = await renderTemplate
                 } catch(error){ console.log(error)}
@@ -57,8 +56,9 @@
                     </div>
                 </div>`
             },
-            abilityCard: () => {
-                return console.log("ability")
+            abilityCard: async ({ pokemon }) => {
+                const response = pokemon.map(({ pokemon, is_hidden }) => `<li>${pokemon.name}</li>`) 
+                return `<ul>${response.join("")}</ul>`
             }
         }
     }
