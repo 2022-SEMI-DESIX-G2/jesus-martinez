@@ -4,21 +4,30 @@
             pokeForm: document.querySelector("#pokemon-form"),
             pokeInput: document.querySelector("#poke-inptut"),
             pokeSelect: document.querySelector("#poke-select"),
-            pokeOutput: document.querySelector("#response-pokemon")
+            pokeOutput: document.querySelector("#response-pokemon"),
+            pokeClean: document.querySelector("#poke-clean")
         },
         init: () => {
+            App.htmmlElements.pokeClean.style.display = 'none'
             App.htmmlElements.pokeForm.addEventListener("submit",App.handlers.getPokemonFormSubmit)
+            App.htmmlElements.pokeClean.addEventListener("click",App.handlers.cleanPokemonCars)
         },
         handlers: {
             getPokemonFormSubmit: async (e) => {
                 e.preventDefault()
+                App.htmmlElements.pokeClean.style.display = ''
                 const searchType = App.htmmlElements.pokeSelect.value
-                const query = App.htmmlElements.pokeInput.value
+                const query = App.htmmlElements.pokeInput.value.toLowerCase();
+
                 try{
                     const response = await Utils.getServerSearch({searchType,query})
                     const renderTemplate = App.templates.render({searchType, response})
                     App.htmmlElements.pokeOutput.innerHTML = await renderTemplate
                 } catch(error){ console.log(error)}
+            },
+            cleanPokemonCars: () => {
+                App.htmmlElements.pokeOutput.innerHTML =""
+
             }
         },
         templates: {
@@ -63,7 +72,6 @@
                     <h3>Who can learn it?</h3>
                     <ul>${response.join("")}</ul>
                 </div>` 
-                
             }
         }
     }

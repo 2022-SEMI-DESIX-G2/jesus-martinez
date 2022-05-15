@@ -12,6 +12,7 @@ body{
     float: right;
     margin-right: 40px;
     margin-top: 10px;
+    z-index: 1;
 }
 
 .form-section{

@@ -12,7 +12,6 @@
         fetch: async ({ url, searchType }) => {
             try {
               const rawResponse = await fetch(url)
-              console.log(url)
               if (rawResponse.status !== 200) {throw new Error(`${searchType} not found`)}
               return rawResponse.json();
             } catch (error) {
