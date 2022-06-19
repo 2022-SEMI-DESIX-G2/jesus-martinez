@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;600&display=swap" rel="stylesheet">
+    <title>Proyecto 1</title>
+</head>
+<body>
+    <div class="pokemon-logo">
+        <img src="img/pokemon-logo.svg">
+    </div>
+    <div class="card c1">
+        <form id="poke-form">
+            <div class="item">
+                <label class="nombre">Nombre:</label>
+                <label>Sprites
+                    <input type="checkbox" id="sprites-check">
+                    <span class="checkmark"></span>
+                </label>
+                <label>Ubicación
+                    <input class="check-1" type="checkbox" id="location-check">
+                </label>
+                <label>Cadena de evolución
+                    <input class="check" type="checkbox" id="chain-check">
+                </label>
+            </div>
+            <div class="item">
+                <input class="input-search" type="text" id="poke-search">
+                <button type="submit">Buscar</button>
+            </div>
+        </form>
+    </div>
+    <div class="card-pokemon c3" id="response-pokemon"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="modules/utils.js"></script>
+    <script src="modules/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body{
+    background-image: url(img/fondo.webp) ;
+}
+
+h1{
+    font-size: 32px;
+}
+
+h2{
+    font-size: 32px;
+    font-weight: 300;
+}
+
+label{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+}
+
+button{
+    width: 106px;
+    height: 38px;
+    color: #FFFFFF;
+    background: #4C49A6;
+    border-radius: 5px;
+    border:0px;
+    margin-left: 20px;
+}
+
+.pokemon-logo{
+    margin-left: 40%;
+    margin-top: -70px;
+    float: left;
+    position: absolute;
+}
+
+.card{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    background-color:#1A222C;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 50px 10px 50px 10px;
+    font-family: 'Montserrat';
+    margin-left: 25%;
+    text-align: center;
+    color:#FFFFFF ;
+}
+
+.c1{
+    margin-top: 100px;
+    width: 800px;
+}
+
+.c2{
+    margin-top: 30px;
+    width: 800px;
+}
+
+.c3{
+    margin-top: 30px;
+    width: 500px;
+}
+
+.item{
+    padding: 10px 1px 10px 1px;
+}
+
+.nombre{
+   padding-right: 67px;
+}
+
+.input-search{
+    width: 461px;
+    height: 38px;
+    background: #D9D9D9;
+    border-radius: 5px;
+    border:0;
+}
+
+.c2card{
+    background-color: #1A222C;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 50px 50px 50px 100px;
+}
+
+.checkmark{
+    background-color: #D9D9D9;
+}
+
+
+.card-pokemon{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    background-color:#1A222C;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0px 0px 0px 0px;
+    font-family: 'Montserrat';
+    margin-left: 34%;
+    text-align: center;
+    color:#FFFFFF ;
+}
+
+.ccard-poke{
+    background-color: #1A222C;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0px 0px 0px 0px;
+}
+
+.poke-img{
+    width: 400px;
+    margin-top: -100px;
+}
+
+.table{
+    border-collapse: collapse;
+    width: 100%;
+}
