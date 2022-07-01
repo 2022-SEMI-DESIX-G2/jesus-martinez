@@ -109,7 +109,7 @@ button{
     background-color: #1A222C;
     margin-bottom: 20px;
     text-align: center;
-    padding: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
 }
 
 .poke-img{
@@ -120,4 +120,14 @@ button{
 .table{
     border-collapse: collapse;
     width: 100%;
+    
+}
+
+th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #103778;
+    color: white;
+    border-radius: 5px;
 }

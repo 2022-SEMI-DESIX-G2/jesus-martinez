@@ -17,74 +17,89 @@
                 e.preventDefault()
 
                 App.htmmlElements.pokeOutput.style.display = ''
+                const sprites = App.htmmlElements.pokeSprites.checked
+                const location = App.htmmlElements.pokeLocation.checked
+                const chain = App.htmmlElements.pokeChain.checked
 
-                const query = App.htmmlElements.pokeSearch.value.toLowerCase();
-                const responsePoke = await Utils.getPokemon(query);
-                const sprites = App.htmmlElements.pokeSprites
-                const location = App.htmmlElements.pokeLocation
-                const chain = App.htmmlElements.pokeChain
+                try {
+                    const query = App.htmmlElements.pokeSearch.value.toLowerCase();
+                    const responsePoke = await Utils.getPokemon(query);
 
-                const searchType = "name"
+                    console.log("pke",responsePoke)
 
-                const locationResponse = await Utils.getLocation(responsePoke.data.id)
+                    if(responsePoke.data.error){
+                        render = App.templates.pokemonError()
+                        App.htmmlElements.pokeOutput.innerHTML = await render
+                    }else{
+                        const locationResponse = await Utils.getLocation(responsePoke.data.id)
+                        const evolutionChain = await Utils.getEvolutionChain(responsePoke.data.id)
 
-                render = App.templates.renderTemplate({ searchType, responsePoke })
-                App.htmmlElements.pokeOutput.innerHTML = await render
-                
-                if(sprites.checked){
-                    const searchType = "pokemon"
-                    render = App.templates.renderTemplate({ searchType, responsePoke })
-                    App.htmmlElements.pokeOutput.innerHTML = await render
-                }
-                
-                if(location.checked ){
-                    cardLocation = App.templates.locationCard(locationResponse)
-                    App.htmmlElements.pokeOutput.innerHTML = await cardLocation
-                }
-
-                chain.checked ? console.log("activado") : console.log("desactivado")
-
+                        render = App.templates.pokemonCard({ responsePoke, sprites, location, locationResponse, chain, evolutionChain })
+                        App.htmmlElements.pokeOutput.innerHTML = await render
+                    }
+                } catch (error) {
+                    console.log(error)
+                }                
             }
         },
         templates: {
-            renderTemplate: ({ searchType, responsePoke}) => {
-                const renderType = {
-                    pokemon: App.templates.pokemonCard,
-                    name: App.templates.nameCard
-                }
-                return renderType[searchType] ? renderType[searchType](responsePoke) : "ERROR"  
-            },
-            nameCard: ({ data }) => {
+            pokemonCard: async ({ responsePoke, sprites, location, locationResponse, chain, evolutionChain }) => {
+                const { data } = responsePoke
+                if(sprites){
+                    var spritesTemplate = `
+                    <div class="item">
+                        <img class="poke-img" src="${data.sprites.front_default}">
+                    </div>
+                    `
+                }else var spritesTemplate = ``
+
+                if(location){
+                    for(let i = 0; i < locationResponse.data.length; i++) {
+                        var tr = `<tr>
+                                <td>`+locationResponse.data[i].location_area.name+`</td>
+                                <td>`+locationResponse.data[i].location_area.url+`</td>
+                            </tr>`
+                        console.log(locationResponse.data[i].location_area);
+                    }
+                    var table = `
+                        <div class="item">
+                            <table class="table">
+                                <tr>
+                                    <th>Lugar</th>
+                                    <th>Url</th>
+                                </tr>
+                                ${tr}
+                            </table>
+                        </div>
+                    `
+                }else table = ``
+
+                if(chain){
+                    const pokeEvolutionChain = evolutionChain.map(({ name,is_baby }) => `<li>${name} ${is_baby? '<img class="baby-img"src="img/baby.svg">':""} </li>`) 
+                    var chainTemplate = `
+                        <div class="item">
+                            <h3>Evolution chain</h3>
+                            <ul>${pokeEvolutionChain.join("")}</ul>
+                        </div>
+                    `
+                }else chainTemplate = ``
+                
                 return `
                     <div class="item">
                         <h1>${data.name}</h1>
                         <h3> Altura: ${data.height} pies, Ancho: ${data.weight} pies</h3>
-                    </div> `
-                    
-            },    
-            pokemonCard: async ({ data }) => {
-                return `
-                    <div class="item">
-                        <img class="poke-img" src="${data.sprites.front_default}">
-                    </div>`
+                    </div>
+                    ${spritesTemplate}
+                    ${table}
+                    ${chainTemplate}
+                    `
             },
-            locationCard: ({ data }) => {
-                for(let i = 0; i < data.length; i++) {
-                    var tr = `<tr>
-                            <td>`+data[i].location_area.name+`</td>
-                            <td>`+data[i].location_area.url+`</td>
-                        </tr>`
-                    console.log(data[i].location_area);
-                }
+            pokemonError: () => {
                 return `
-                <table class="table">
-                    <tr>
-                        <td>Lugar</td>
-                        <td>Url</td>
-                    </tr>
-                    ${tr}
-                </table>`
-                
+                <div class="item">
+                    <img src="img/notfound.png">
+                </div>
+                `
             }
         }
     }
