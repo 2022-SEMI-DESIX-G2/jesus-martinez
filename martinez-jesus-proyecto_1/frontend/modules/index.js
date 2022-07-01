@@ -25,6 +25,8 @@
                     const query = App.htmmlElements.pokeSearch.value.toLowerCase();
                     const responsePoke = await Utils.getPokemon(query);
 
+                    console.log("pke",responsePoke)
+
                     if(responsePoke.data.error){
                         render = App.templates.pokemonError()
                         App.htmmlElements.pokeOutput.innerHTML = await render

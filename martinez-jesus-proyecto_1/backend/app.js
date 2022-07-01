@@ -5,16 +5,19 @@ const cors = require("cors");
 const app = express();
 
 const PORT = process.env.DEVPORT || 3000;
-const TTL = process.env.TTL || 0;
-const CACHE = {};
+const TTL = process.env.TTL || 5000;
+const CACHE_POKE = {};
+const CACHE_ENCOUNTERS = {};
+const CACHE_SPECIES = {};
+const CACHE_CHAIN = {};
 
 app.use(cors());
 
 app.post("/pokemon/:name", async function (req, res) {
     const { name } = req.params;
     let responseData; 
-    if (CACHE[name]) {
-        return res.json({ data: CACHE[name], isCached: true, ttl: true});
+    if (CACHE_POKE[name]) {
+        return res.json({ data: CACHE_POKE[name], isCached: true, ttl: true});
     }
     try {
         const { data } = await axios.get(
@@ -24,16 +27,16 @@ app.post("/pokemon/:name", async function (req, res) {
     } catch (error) {
         responseData = { error: error.toString(), name };
     }
-    CACHE[name] = responseData;
-    cacheTime = setTimeout(() => { delete CACHE[name] }, TTL);
+    CACHE_POKE[name] = responseData;
+    cacheTime = setTimeout(() => { delete CACHE_POKE[name] }, TTL);
     res.send({ data: responseData, isCached: false, ttl: false });
 });
 
 app.post("/encounters/:name", async function (req, res) {
     const { name } = req.params;
     let responseData; 
-    if (CACHE[name]) {
-        return res.json({ data: CACHE[name], isCached: true, ttl: true});
+    if (CACHE_ENCOUNTERS[name]) {
+        return res.json({ data: CACHE_ENCOUNTERS[name], isCached: true, ttl: true});
     }
     try {
         const { data } = await axios.get(
@@ -43,8 +46,8 @@ app.post("/encounters/:name", async function (req, res) {
     } catch (error) {
         responseData = { error: error.toString(), name };
     }
-    CACHE[name] = responseData;
-    cacheTime = setTimeout(() => { delete CACHE[name] }, TTL);
+    CACHE_ENCOUNTERS[name] = responseData;
+    cacheTime = setTimeout(() => { delete CACHE_ENCOUNTERS[name] }, TTL);
     res.send({ data: responseData, isCached: false, ttl: false });
 });
 
@@ -52,8 +55,8 @@ app.post("/encounters/:name", async function (req, res) {
 app.post("/species/:name", async function (req, res) {
     const { name } = req.params;
     let responseData; 
-    if (CACHE[name]) {
-        return res.json({ data: CACHE[name], isCached: true, ttl: true});
+    if (CACHE_SPECIES[name]) {
+        return res.json({ data: CACHE_SPECIES[name], isCached: true, ttl: true});
     }
     try {
         const { data } = await axios.get(
@@ -63,16 +66,16 @@ app.post("/species/:name", async function (req, res) {
     } catch (error) {
         responseData = { error: error.toString(), name };
     }
-    CACHE[name] = responseData;
-    cacheTime = setTimeout(() => { delete CACHE[name] }, TTL);
+    CACHE_SPECIES[name] = responseData;
+    cacheTime = setTimeout(() => { delete CACHE_SPECIES[name] }, TTL);
     res.send({ data: responseData, isCached: false, ttl: false });
 });
 
 app.post("/poekechain/:name", async function (req, res) {
     const { name } = req.params;
     let responseData; 
-    if (CACHE[name]) {
-        return res.json({ data: CACHE[name], isCached: true, ttl: true});
+    if (CACHE_CHAIN[name]) {
+        return res.json({ data: CACHE_CHAIN[name], isCached: true, ttl: true});
     }
     try {
         const { data } = await axios.get(
@@ -82,8 +85,8 @@ app.post("/poekechain/:name", async function (req, res) {
     } catch (error) {
         responseData = { error: error.toString(), name };
     }
-    CACHE[name] = responseData;
-    cacheTime = setTimeout(() => { delete CACHE[name] }, TTL);
+    CACHE_CHAIN[name] = responseData;
+    cacheTime = setTimeout(() => { delete CACHE_CHAIN[name] }, TTL);
     res.send({ data: responseData, isCached: false, ttl: false });
 });
 
