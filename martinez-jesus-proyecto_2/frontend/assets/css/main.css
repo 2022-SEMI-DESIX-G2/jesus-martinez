@@ -1,0 +1,141 @@
+:root {
+    --principal-color: rgb(190, 190, 190);
+    --principal-color-opacity: #FDFDFD;
+  }
+  
+body {
+  background:var(--principal-color-opacity);
+  filter: alpha(opacity=60);
+  float: left;
+}
+
+
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 27px;
+  font-weight: 600;
+  margin-left: 30px;
+  color: #ffffff;
+}
+
+button {
+  width: 109px;
+  height: 50px;
+  color: #ffffff;
+  background: #4d9fff;
+  border-radius: 12px;
+  border: 0px;
+  margin-left: 20px;
+}
+
+.pokemon-logo {
+  margin-left: 39%;
+  margin-top: 30px;
+  position: absolute;
+}
+
+.card {
+  transition: 0.3s;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column wrap;
+  font-family: 'Poppins', sans-serif;
+}
+.i1{
+    margin-left: -300px;
+}
+.c1 {
+  margin-top: 220px;
+  width: 800px;
+  text-align: center;
+  margin-left: 60%;
+}
+
+.item {
+  padding: 10px 1px 10px 1px;
+}
+
+.input-search {
+  width: 461px;
+  height: 50px;
+  background: #d9d9d9;
+  border-radius: 12px;
+  border: 0;
+}
+
+/* cards --------------- start here ------------------------------ */
+
+.card-pokemon {
+    width: 800px;
+    height: auto;
+    margin-top: 60px;
+    transition: 0.3s;
+    border-radius: 12px;
+    display: flex;
+    flex-flow: column wrap;
+    font-family: 'Poppins', sans-serif;
+    background-color:var(--principal-color);
+    margin-left: 60%;
+  }
+
+.card-resume{
+    width: 97%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -150px;
+    padding:60px 1px 10px 1px;
+    text-align: center;
+}
+
+.img{
+    width: 350px;
+    margin-left: 30%;
+    z-index: 1;
+    margin-top: -80px;
+}
+
+.type{
+    background-color:var(--principal-color);
+    padding:5px 15px 5px 15px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.resume-title{
+    margin-top: 30px;
+    color:var(--principal-color);
+    font-weight: 600;
+    font-size: 22px;
+}
+.about-text{
+    margin-top: 10px;
+    font-weight: 200;
+}
+.about-text span{
+    padding: 20px;
+}
+
+.peso{
+    width: 20px;
+}
+
+.location{
+    width: 100%;
+    padding: 10px;
+}
+
+.location th{
+    background: var(--principal-color-opacity);  
+}
+
+li{
+  list-style: none;
+}
